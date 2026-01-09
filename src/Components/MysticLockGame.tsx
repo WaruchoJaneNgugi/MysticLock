@@ -94,7 +94,6 @@ export const MysticLockGame: React.FC = () => {
             const lockbox = newLockboxes[lockboxId];
 
             if (lockbox.isRevealed) return prev;
-
             // Reveal the selected lockbox
             lockbox.isRevealed = true;
 
@@ -118,7 +117,7 @@ export const MysticLockGame: React.FC = () => {
                 }));
             }, 1000);
 
-            // Auto-hide popup after total 3 seconds (2 seconds visible)
+            // Auto-hide popup after 3 seconds (2 seconds visible)
             setTimeout(() => {
                 setGameState(prev => ({
                     ...prev,
