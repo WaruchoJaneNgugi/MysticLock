@@ -3,14 +3,17 @@ import GameControls from './GameControls';
 import GameHeader from "./GameHeader.tsx";
 import {LockboxCanvas} from "./LockboxCanvas.tsx";
 import {type Lockbox, type GameState, type SymbolConfig, SYMBOL_CONFIGS, INITIAL_STATE} from "../Utils/type.ts";
+import {useAudioControl} from "../Hooks/useSound.ts";
 
 // Remove "as const" and properly type as SymbolConfig[]
 
 
 
 export const MysticLockGame: React.FC = () => {
+
     const [isMuted, setIsMuted] = useState(false);
     // const {playSound}=useAudioControl(isMuted,true);
+    const {playSound}=useAudioControl(isMuted,true);
 
     // Get weighted random symbol - fix return type
     const getRandomSymbol = useCallback((): SymbolConfig => {
@@ -74,8 +77,8 @@ export const MysticLockGame: React.FC = () => {
             balance: prev.balance - prev.betAmount // Deduct bet
         }));
 
-        // playSound('betClickSnd');
-    }, [gameState.balance, gameState.betAmount, initializeLockboxes]);
+        playSound('betClickSnd');
+    }, [gameState.balance, gameState.betAmount, initializeLockboxes, playSound]);
 
     // Select a lockbox (player makes their choice)
     const selectLockbox = useCallback((lockboxId: number) => {
@@ -123,6 +126,7 @@ export const MysticLockGame: React.FC = () => {
                     gameStatus: 'idle',
                 }));
             }, 3000);
+            playSound("WinsSnd")
         } else {
             // If no winnings, just go back to idle after a short delay
             setTimeout(() => {
@@ -133,8 +137,8 @@ export const MysticLockGame: React.FC = () => {
             }, 1000);
         }
 
-        // playSound('cellSelectSnd');
-    }, [gameState.gameStatus, gameState.lockboxes, gameState.betAmount]);
+        playSound('cellSelectSnd');
+    }, [gameState.gameStatus, gameState.lockboxes, gameState.betAmount, playSound]);
 
     const changeLevel = useCallback((level: 'easy' | 'medium' | 'hard') => {
         // Level doesn't affect lockbox game, but kept for compatibility
@@ -173,8 +177,8 @@ export const MysticLockGame: React.FC = () => {
                 betAmount: newBetAmount
             };
         });
-        // playSound('betClickSnd');
-    }, []);
+        playSound('betClickSnd');
+    }, [playSound]);
 
     const resetGame = useCallback(() => {
         const newLockboxes = initializeLockboxes();
@@ -183,8 +187,8 @@ export const MysticLockGame: React.FC = () => {
             lockboxes: newLockboxes,
             balance: 1000, // Explicitly reset balance
         });
-        // playSound('betClickSnd');
-    }, [initializeLockboxes]);
+        playSound('betClickSnd');
+    }, [initializeLockboxes, playSound]);
 
     return (
         <div className="mines-game">

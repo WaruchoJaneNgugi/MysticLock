@@ -1,4 +1,4 @@
-export type SymbolType = 'ember_stone' | 'tide_pearl' | 'spirit_leaf' | 'storm_rune' | 'eternal_eye' | 'cosmic_fragment';
+export type SymbolType = 'null_core'|'ember_stone' | 'tide_pearl' | 'spirit_leaf' | 'storm_rune' | 'eternal_eye' | 'cosmic_fragment';
 
 export type SymbolConfig ={
     type: SymbolType;
@@ -40,7 +40,15 @@ export interface Cell {
     isFlagged: boolean;
 }
 
-export const SYMBOL_CONFIGS:SymbolConfig[] = [
+export const SYMBOL_CONFIGS: SymbolConfig[] = [
+    {
+        type: 'null_core',
+        name: 'Null Core',
+        emoji: '⚫',
+        basePayout: 0,
+        color: '#2C3E50',
+        rarityWeight: 50
+    },
     {
         type: 'ember_stone',
         name: 'Ember Stone',

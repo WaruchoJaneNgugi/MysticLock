@@ -74,7 +74,7 @@ export const HowToPlay: React.FC = () => {
                         <Gem size={24} />
                     </div>
                     <h4>Symbols & Rarity</h4>
-                    <p>Common: Ember Stone (1x), Tide Pearl (1.5x), Spirit Leaf (2x). Rare: Storm Rune (3x), Eternal Eye (10x). Legendary: Cosmic Fragment (20x).</p>
+                    <p>Common:Null Core(0), Ember Stone (1x), Tide Pearl (1.5x), Spirit Leaf (2x). Rare: Storm Rune (3x), Eternal Eye (10x). Legendary: Cosmic Fragment (20x).</p>
                 </div>
 
                 <div className="instruction-card">
@@ -82,7 +82,7 @@ export const HowToPlay: React.FC = () => {
                         <Sparkles size={24} />
                     </div>
                     <h4>Game Flow</h4>
-                    <p>Bet → Choose lockbox → Reveal symbol → Collect winnings → Play again. Win popup auto-shows for 2 seconds.</p>
+                    <p>Bet → Choose lockbox → Reveal symbol → Get Big wins → Play again. Win popup auto-shows for 2 seconds.</p>
                 </div>
             </div>
 
