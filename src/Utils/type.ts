@@ -55,47 +55,47 @@ export const SYMBOL_CONFIGS: SymbolConfig[] = [
         emoji: '🔥',
         basePayout: 1,
         color: '#FF6B35',
-        rarityWeight: 30
+        rarityWeight: 40
     },
     {
         type: 'tide_pearl',
         name: 'Tide Pearl',
         emoji: '💧',
-        basePayout: 1.5,
+        basePayout: 1.2,
         color: '#4A90E2',
-        rarityWeight: 25
+        rarityWeight: 35
     },
     {
         type: 'spirit_leaf',
         name: 'Spirit Leaf',
         emoji: '🌿',
-        basePayout: 2,
+        basePayout: 1.5,
         color: '#7CB342',
-        rarityWeight: 20
+        rarityWeight: 15
     },
     {
         type: 'storm_rune',
         name: 'Storm Rune',
         emoji: '⚡',
-        basePayout: 3,
+        basePayout: 2.5,
         color: '#9C27B0',
-        rarityWeight: 15,
+        rarityWeight: 10,
         effect: 'bonus_chance'
     },
     {
         type: 'eternal_eye',
         name: 'Eternal Eye',
         emoji: '🔮',
-        basePayout: 10,
+        basePayout: 3.5,
         color: '#673AB7',
-        rarityWeight: 8,
+        rarityWeight: 5,
         effect: 'trigger_bonus'
     },
     {
         type: 'cosmic_fragment',
         name: 'Cosmic Fragment',
         emoji: '⭐',
-        basePayout: 20,
+        basePayout: 4,
         color: '#FFD700',
         rarityWeight: 2,
         effect: 'jackpot'

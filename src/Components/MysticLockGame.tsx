@@ -14,7 +14,6 @@ export const MysticLockGame: React.FC = () => {
     const [isMuted, setIsMuted] = useState(false);
     // const {playSound}=useAudioControl(isMuted,true);
     const {playSound}=useAudioControl(isMuted,true);
-
     // Get weighted random symbol - fix return type
     const getRandomSymbol = useCallback((): SymbolConfig => {
         const totalWeight = SYMBOL_CONFIGS.reduce((sum, symbol) => sum + symbol.rarityWeight, 0);
@@ -48,7 +47,6 @@ export const MysticLockGame: React.FC = () => {
                 multiplier: symbolConfig.basePayout,
             });
         }
-
         return lockboxes;
     }, [getRandomSymbol]);
     const [gameState, setGameState] = useState<GameState>(() => {
@@ -58,8 +56,6 @@ export const MysticLockGame: React.FC = () => {
             lockboxes: initialLockboxes,
         };
     });
-
-// Then REMOVE the entire useEffect that calls InitialLockBoxesFunc
 
     // Start the game (place bet)
     const startGame = useCallback(() => {
